@@ -1,0 +1,45 @@
+import React from 'react';
+
+const VerticalStepperWithText = () => {
+  const steps = [
+    {
+      title: "Expertise and Innovation",
+      description:
+        "Our team of experts brings years of experience across diverse industries, ensuring that we provide innovative and scalable tech solutions tailored to your unique needs.",
+    },
+    {
+      title: "Client-Centric Approach",
+      description:
+        "Your success is our priority. We listen, understand your challenge, and work collaboratively to develop custom strategies that deliver measurable results.",
+    },
+    {
+      title: "Cutting-Edge Technology",
+      description:
+        "We stay at the forefront of technology trends, from AI and cloud computing to cybersecurity and IoT, offering you the latest tools to stay competitive and secure.",
+    },
+  ];
+
+  return (
+    <div className="flex flex-col items-center justify-start py-10">
+      {steps.map((step, index) => (
+        <div key={index} className="flex items-start mb-8">
+          {/* Circle and Line */}
+          <div className="flex flex-col items-center">
+            <div className="w-8 h-8 border-4 border-blue-500 rounded-full mb-2"></div>
+            {index !== steps.length - 1 && (
+              <div className="h-20 w-0.5 bg-gray-400"></div>
+            )}
+          </div>
+
+          {/* Text Section */}
+          <div className="ml-8">
+            <h3 className="text-lg font-bold text-black">{step.title}</h3>
+            <p className="text-gray-600 max-w-md mt-2">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default VerticalStepperWithText;
